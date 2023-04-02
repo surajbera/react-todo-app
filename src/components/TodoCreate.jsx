@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const TodoCreateForm = ({ onCreate }) => {
+const TodoCreate = ({ onCreate }) => {
   const [todo, setTodo] = useState('')
 
   const handleChange = (event) => {
@@ -17,10 +17,10 @@ const TodoCreateForm = ({ onCreate }) => {
     <div className='todo-form'>
       <form onSubmit={handleSubmit}>
         <input type='text' className='todo-form__input' value={todo} onChange={handleChange} />
-        <button className='todo-form__button'>Add Todo</button>
+        <button className='todo-form__button border'>Add Todo</button>
       </form>
     </div>
   )
 }
 
-export default TodoCreateForm
+export default TodoCreate

@@ -1,13 +1,5 @@
-.todo-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 500px;
-  padding: 20px;
+.border {
   border: 1px solid var(--gray-clr-3);
-  border-radius: 5px;
 }
 .app-heading {
   margin: 2rem auto;
@@ -16,7 +8,17 @@
   text-align: center;
   text-transform: uppercase;
 }
-
-.todo-form__button {
-  border: 1px solid var(--gray-clr-3);
+.todo-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 5px;
+}
+.todo-form__button:hover {
+  color: var(--white-clr);
+  background-color: var(--gray-clr-3);
 }

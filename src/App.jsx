@@ -1,6 +1,6 @@
 import './App.css'
 import { useState } from 'react'
-import TodoCreateForm from './components/TodoCreateForm'
+import TodoCreate from './components/TodoCreate'
 
 function App() {
   const [todos, setTodos] = useState([])
@@ -12,7 +12,7 @@ function App() {
   return (
     <div className='App'>
       <h1 className='app-heading'>TODO APP</h1>
-      <TodoCreateForm onCreate={createTodo} />
+      <TodoCreate onCreate={createTodo} />
     </div>
   )
 }
