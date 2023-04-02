@@ -20,3 +20,4 @@
   - Don't know why I am getting an error on adding first todo.
   - Add a feature where same todos can't be added
   - Don't display the TodoList compnenet if there are no todos
+  - Add a feature to mark a todo complete, add a checkbox

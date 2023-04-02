@@ -255,6 +255,7 @@ ul {
 button {
   background: transparent;
   cursor: pointer;
+  padding: 0;
 }
 ::-moz-selection {
   color: var(--black-clr);

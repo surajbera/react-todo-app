@@ -32,18 +32,22 @@
   padding: 2rem;
 }
 .todo-card__inner {
-  padding: 1rem 4rem 1rem 1rem;
+  padding: 2.5rem 1rem 1rem 1rem;
   position: relative;
   height: 100%;
 }
 .todo-card {
 }
-.todo-delete-btn {
-  padding: 0;
-  display: flex;
+.todo-delete-btn,
+.todo-edit-btn {
+}
+.todo-edit-btn {
+}
+.todo-card__actions {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  right: 0;
+  top: 0;
+  gap: 0.5rem;
 }
 .svg-icon {
   width: 2rem;
