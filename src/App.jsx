@@ -22,11 +22,18 @@ function App() {
     setTodos(updatedTodos)
   }
 
+  const deleteTodoById = (id) => {
+    const updatedTodos = todos.filter((todos) => {
+      return todos.id !== id
+    })
+    setTodos(updatedTodos)
+  }
+
   return (
     <div className='App'>
       <h1 className='app-heading'>TODO APP</h1>
       <TodoCreate onCreate={createTodo} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onDelete={deleteTodoById} />
     </div>
   )
 }
