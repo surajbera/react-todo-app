@@ -287,3 +287,6 @@ body {
   background-color: var(--white-clr);
   color: var(--text-clr);
 }
+li {
+  list-style: none;
+}

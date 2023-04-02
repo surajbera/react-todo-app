@@ -22,3 +22,17 @@
   color: var(--white-clr);
   background-color: var(--gray-clr-3);
 }
+.todo-list {
+  max-width: 70rem;
+  margin: 2rem auto 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  grid-auto-rows: auto;
+  padding: 2rem;
+}
+.todo-card__inner {
+  padding: 1rem;
+}
+.todo-card {
+}
