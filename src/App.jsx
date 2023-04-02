@@ -1,4 +1,7 @@
+/* libraies and functions */
 import { useState } from 'react'
+
+/* components */
 import TodoCreate from './components/TodoCreate'
 import TodoList from './components/TodoList'
 
