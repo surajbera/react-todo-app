@@ -1,9 +1,3 @@
-import React from 'react'
-
-const TodoEdit = () => {
-  return (
-    <div>TodoEdit</div>
-  )
+export const TodoEdit = () => {
+  return <div>TodoEdit</div>
 }
-
-export default TodoEdit

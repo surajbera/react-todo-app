@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const TodoCreate = ({ onCreate }) => {
+export const TodoCreate = ({ onCreate }) => {
   const [todo, setTodo] = useState('')
 
   const handleChange = (event) => {
@@ -22,5 +22,3 @@ const TodoCreate = ({ onCreate }) => {
     </div>
   )
 }
-
-export default TodoCreate

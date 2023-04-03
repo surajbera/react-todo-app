@@ -2,8 +2,8 @@
 import { useState } from 'react'
 
 /* components */
-import TodoCreate from './components/TodoCreate'
-import TodoList from './components/TodoList'
+import { TodoCreate } from './components/TodoCreate'
+import { TodoList } from './components/TodoList'
 
 /* utils */
 import { getUniqueId } from './utils'
