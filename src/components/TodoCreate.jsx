@@ -9,6 +9,9 @@ export const TodoCreate = ({ onCreate }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    if (todo.trim() === '') {
+      return
+    }
     onCreate(todo)
     setTodo('')
   }
