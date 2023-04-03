@@ -64,3 +64,11 @@
   width: 2rem;
   height: auto;
 }
+.edit-todo-label {
+  font-size: 1.2rem;
+  margin: 0 0 0.3rem;
+  display: flex;
+}
+.todo-card__inner--edit {
+  padding: 1.5rem;
+}
