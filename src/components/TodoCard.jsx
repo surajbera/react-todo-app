@@ -25,7 +25,7 @@ export const TodoCard = ({ todo, onDelete, onEdit, bgImageIndex }) => {
   }
 
   return (
-    <li className='todo-card border' key={todo.id}>
+    <li className='todo-card border'>
       <div className='todo-card__bg' style={backgroundImage}></div>
 
       <div className={cardInnerClass}>
