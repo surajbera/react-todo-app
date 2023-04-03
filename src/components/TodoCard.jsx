@@ -16,7 +16,7 @@ export const TodoCard = ({ todo, onDelete }) => {
   }
 
   const handleEditClick = () => {
-    setShowEdit(!setShowEdit)
+    setShowEdit(!showEdit)
   }
 
   return (
@@ -31,7 +31,8 @@ export const TodoCard = ({ todo, onDelete }) => {
           </button>
         </div>
 
-        <p className='todo-card__title'>{todo.title}</p>
+        {!showEdit && <p className='todo-card__title'>{todo.title}</p>}
+        {showEdit && <TodoEdit />}
       </div>
     </li>
   )
