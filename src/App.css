@@ -72,3 +72,13 @@
 .todo-card__inner--edit {
   padding: 1.5rem;
 }
+.delete-icon__path,
+.edit-icon__path {
+  fill: var(--black-clr-2);
+}
+.delete-icon:hover .delete-icon__path {
+  fill: var(--danger);
+}
+.edit-icon:hover .edit-icon__path {
+  fill: var(--edit-icon-clr);
+}

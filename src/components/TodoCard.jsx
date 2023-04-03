@@ -8,7 +8,7 @@ import { TodoEdit } from './TodoEdit'
 import { DeleteIcon } from '../assets/icons'
 import { EditIcon } from '../assets/icons'
 
-export const TodoCard = ({ todo, onDelete }) => {
+export const TodoCard = ({ todo, onDelete, onEdit }) => {
   const [showEdit, setShowEdit] = useState(false)
 
   const handleDeleteClick = () => {
@@ -36,7 +36,7 @@ export const TodoCard = ({ todo, onDelete }) => {
         )}
 
         {!showEdit && <p className='todo-card__title'>{todo.title}</p>}
-        {showEdit && <TodoEdit todo={todo} />}
+        {showEdit && <TodoEdit todo={todo} onEdit={onEdit} setShowEdit={setShowEdit} />}
       </div>
     </li>
   )

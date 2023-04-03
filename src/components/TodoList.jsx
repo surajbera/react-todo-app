@@ -1,10 +1,10 @@
 import { TodoCard } from './TodoCard'
 
-export const TodoList = ({ todos, onDelete }) => {
+export const TodoList = ({ todos, onDelete, onEdit }) => {
   return (
     <ul className='todo-list border'>
       {todos.map((todo) => (
-        <TodoCard todo={todo} onDelete={onDelete} />
+        <TodoCard todo={todo} onDelete={onDelete} onEdit={onEdit} />
       ))}
     </ul>
   )

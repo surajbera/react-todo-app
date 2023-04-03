@@ -12,8 +12,9 @@
   --gray-clr-3: #898989;
   --black-clr-1: #1e2243;
   --black-clr-2: #171c30;
-  --danger: #f87171;
+  --danger: #ef4444;
   --link-color: #0167ff;
+  --edit-icon-clr: #0891b2;
 }
 * {
   word-break: break-word;

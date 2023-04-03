@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const TodoEdit = ({ todo }) => {
+export const TodoEdit = ({ todo, onEdit, setShowEdit }) => {
   const [title, setTitle] = useState(todo.title)
 
   const handleChange = (evt) => {
@@ -8,7 +8,8 @@ export const TodoEdit = ({ todo }) => {
   }
   const handleSubmit = (evt) => {
     evt.preventDefault()
-    console.log(title)
+    onEdit(todo.id, title)
+    setShowEdit(false)
   }
 
   return (

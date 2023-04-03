@@ -32,11 +32,26 @@ function App() {
     setTodos(updatedTodos)
   }
 
+  const editTodoById = (id, newTitle) => {
+    const updatedTodos = todos.map((todo) => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          title: newTitle,
+        }
+      }
+
+      return todo
+    })
+
+    setTodos(updatedTodos)
+  }
+
   return (
     <div className='App'>
       <h1 className='app-heading'>TODO APP</h1>
       <TodoCreate onCreate={createTodo} />
-      <TodoList todos={todos} onDelete={deleteTodoById} />
+      <TodoList todos={todos} onDelete={deleteTodoById} onEdit={editTodoById} />
     </div>
   )
 }
