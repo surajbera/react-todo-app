@@ -21,3 +21,4 @@
   - Add a feature where same todos can't be added
   - Don't display the TodoList compnenet if there are no todos
   - Add a feature to mark a todo complete, add a checkbox
+  - Check if you can implement search functionality
