@@ -23,3 +23,4 @@
   - Don't display the TodoList compnenet if there are no todos
   - Add a feature to mark a todo complete, add a checkbox
   - Check if you can implement search functionality
+  - On editing todo, add a canel button as well
