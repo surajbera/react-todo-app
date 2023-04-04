@@ -1,5 +1,6 @@
 /* libraries and functions */
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { TodosContext } from '../context/TodosContext'
 
 /* components */
 import { TodoEdit } from './TodoEdit'
@@ -8,11 +9,12 @@ import { TodoEdit } from './TodoEdit'
 import { DeleteIcon } from '../assets/icons'
 import { EditIcon } from '../assets/icons'
 
-export const TodoCard = ({ todo, onDelete, onEdit, bgImageIndex }) => {
+export const TodoCard = ({ todo, bgImageIndex }) => {
   const [showEdit, setShowEdit] = useState(false)
+  const { deleteTodoById } = useContext(TodosContext)
 
   const handleDeleteClick = () => {
-    onDelete(todo.id)
+    deleteTodoById(todo.id)
   }
 
   const handleEditClick = () => {
@@ -41,7 +43,7 @@ export const TodoCard = ({ todo, onDelete, onEdit, bgImageIndex }) => {
         )}
 
         {!showEdit && <p className='todo-card__title'>{todo.title}</p>}
-        {showEdit && <TodoEdit todo={todo} onEdit={onEdit} setShowEdit={setShowEdit} />}
+        {showEdit && <TodoEdit todo={todo} setShowEdit={setShowEdit} />}
       </div>
     </li>
   )

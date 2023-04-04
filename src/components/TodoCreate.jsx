@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { TodosContext } from '../context/TodosContext'
 
-export const TodoCreate = ({ onCreate }) => {
+export const TodoCreate = () => {
   const [todo, setTodo] = useState('')
+  const { createTodo } = useContext(TodosContext)
 
   const handleChange = (event) => {
     setTodo(event.target.value)
@@ -12,7 +14,7 @@ export const TodoCreate = ({ onCreate }) => {
     if (todo.trim() === '') {
       return
     }
-    onCreate(todo)
+    createTodo(todo)
     setTodo('')
   }
 

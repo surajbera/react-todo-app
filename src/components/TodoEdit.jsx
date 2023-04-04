@@ -1,14 +1,16 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { TodosContext } from '../context/TodosContext'
 
-export const TodoEdit = ({ todo, onEdit, setShowEdit }) => {
+export const TodoEdit = ({ todo, setShowEdit }) => {
   const [title, setTitle] = useState(todo.title)
+  const { editTodoById } = useContext(TodosContext)
 
   const handleChange = (evt) => {
     setTitle(evt.target.value)
   }
   const handleSubmit = (evt) => {
     evt.preventDefault()
-    onEdit(todo.id, title)
+    editTodoById(todo.id, title)
     setShowEdit(false)
   }
 
