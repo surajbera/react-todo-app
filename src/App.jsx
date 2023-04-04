@@ -1,43 +1,60 @@
 /* libraies and functions */
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 /* components */
 import { TodoCreate } from './components/TodoCreate'
 import { TodoList } from './components/TodoList'
 
 /* utils */
-import { getUniqueId } from './utils'
+/* Not needed now since we are using JSON server */
+// import { getUniqueId } from './utils'
 
 /* styles */
 import './App.css'
 
 function App() {
   const [todos, setTodos] = useState([])
+  useEffect(() => {
+    fetchTodos() 
+  }, [])
 
-  const createTodo = (todo) => {
+  const fetchTodos = async () => {
+    const response = await axios.get('http://localhost:3001/todos')
+    setTodos(response.data)
+  }
+  
+  const createTodo = async (todo) => {
+    const response = await axios.post('http://localhost:3001/todos', {
+      title: todo
+    })
+
     const updatedTodos = [
       ...todos,
-      {
-        id: getUniqueId(),
-        title: todo,
-      },
+      response.data
     ]
     setTodos(updatedTodos)
   }
 
-  const deleteTodoById = (id) => {
+  const deleteTodoById = async (id) => {
+    await axios.delete(`http://localhost:3001/todos/${id}`)
+
     const updatedTodos = todos.filter((todos) => {
       return todos.id !== id
     })
     setTodos(updatedTodos)
   }
 
-  const editTodoById = (id, newTitle) => {
+  const editTodoById = async (id, newTitle) => {
+    const response = await axios.put(`http://localhost:3001/todos/${id}`, {
+      title: newTitle
+    })
+
     const updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
         return {
           ...todo,
-          title: newTitle,
+          ...response.data
         }
       }
 
