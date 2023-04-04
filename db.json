@@ -1,3 +1,12 @@
 {
-  "todos": []
+  "todos": [
+    {
+      "title": "Section 8: Communicating using the context system",
+      "id": 1
+    },
+    {
+      "title": "Section 9: Deeper dive into hooks",
+      "id": 2
+    }
+  ]
 }
