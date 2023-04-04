@@ -1,12 +1,19 @@
 {
   "todos": [
     {
-      "title": "Section 8: Communicating using the context system",
-      "id": 1
+      "id": 1,
+      "title": "Learn React",
+      "completed": false
     },
     {
-      "title": "Section 9: Deeper dive into hooks",
-      "id": 2
+      "id": 2,
+      "title": "Learn Redux",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "title": "Learn React Native",
+      "completed": false
     }
   ]
 }
