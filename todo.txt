@@ -26,3 +26,22 @@
   - On editing todo, add a canel button as well
   - Show a loading text on initial request - loading todos
   - when the page is loaded focus on the input element
+
+- Integrating POSTCSS:
+  npm install --save-dev postcss sass postcss-sort-media-queries cssnano
+  
+  // postcss.config.js
+  module.exports = {
+    plugins: [
+      require('sass'),
+      require('postcss-sort-media-queries')('desktop-first'),
+      require('cssnano')({
+        preset: 'default',
+      }),
+    ],
+  };
+
+  Update index.css to index.scss
+
+- Contains some crazy resources for developers:
+  - https://github.com/bradtraversy/design-resources-for-developers
