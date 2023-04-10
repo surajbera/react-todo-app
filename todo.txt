@@ -45,3 +45,18 @@
 
 - Contains some crazy resources for developers:
   - https://github.com/bradtraversy/design-resources-for-developers
+
+- JWT-based authentication relies on the digital signature to ensure the integrity and authenticity of the token. When a user successfully registers or logs in, the server generates a JWT containing a payload (usually the user's unique identifier) and signs it using a secret key. This secret key should only be known to the server.
+
+When the user sends a request to a protected route or resource, they include the JWT in the Authorization header. Upon receiving the request, the server verifies the JWT's signature using the same secret key. If the signature is valid, it means the token hasn't been tampered with, and the server can trust the information contained in the payload.
+
+Here's a step-by-step explanation of the authentication process using JWT:
+
+The user provides their credentials (e.g., username and password) to log in or register.
+The server verifies the user's credentials. If they are valid, the server creates a JWT containing the user's unique identifier (e.g., user ID) in the payload and signs the token using a secret key.
+The server sends the signed JWT back to the user.
+The user's client stores the JWT, typically in memory or browser storage, and includes it in the Authorization header for subsequent requests to protected resources.
+When the server receives a request containing a JWT, it verifies the token's signature using the same secret key. If the signature is valid, it means the token is authentic and hasn't been tampered with.
+The server decodes the JWT to obtain the user's unique identifier from the payload, which can be used to identify the user and check their access permissions to the requested resource.
+If the user has the necessary permissions, the server processes the request and returns the requested data.
+By using the JWT's digital signature and a secret key, the server can ensure that the token is authentic and trust the user's identity contained in the payload. Additionally, since the JWT is self-contained, it reduces the need for frequent database lookups to verify the user's identity and session state, which can improve the application's performance.
