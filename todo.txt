@@ -60,3 +60,37 @@ When the server receives a request containing a JWT, it verifies the token's sig
 The server decodes the JWT to obtain the user's unique identifier from the payload, which can be used to identify the user and check their access permissions to the requested resource.
 If the user has the necessary permissions, the server processes the request and returns the requested data.
 By using the JWT's digital signature and a secret key, the server can ensure that the token is authentic and trust the user's identity contained in the payload. Additionally, since the JWT is self-contained, it reduces the need for frequent database lookups to verify the user's identity and session state, which can improve the application's performance.
+
+bcrypt.compare is a function provided by the bcrypt library to compare a plaintext password with a hashed password. It works by rehashing the plaintext password with the same salt that was used to hash the original password and then comparing the resulting hashes for equality. If the hashes match, the function returns true, indicating that the plaintext password is correct.
+
+The hashed password created by bcrypt contains not only the actual hash but also metadata about the hashing process, such as the salt and the number of rounds used for hashing. This metadata is encoded into the hashed password string and can be extracted by the bcrypt library when needed.
+
+Here's a brief explanation of how the comparison works:
+
+The compare function takes the plaintext password and the stored hashed password as input.
+The bcrypt library extracts the salt and the number of rounds used for hashing from the stored hashed password string.
+The plaintext password is hashed using the same salt and number of rounds extracted in step 2.
+The newly generated hash is compared to the stored hashed password. If they match, the function returns true, indicating that the plaintext password is correct. Otherwise, it returns false.
+By using the same salt and number of rounds for hashing, bcrypt.compare can effectively check whether the plaintext password provided matches the original password that was hashed and stored. This process doesn't require the server to store the original plaintext password or the salt separately, as all the necessary information is encoded within the hashed password string itself.
+
+
+Login and Registration flow:
+A user visits the login or registration page of your React application and enters their credentials (e.g., email and password).
+
+The React application sends a POST request to the Node.js server with the user's credentials.
+
+The Node.js server receives the POST request and checks the database to see if the user exists and if the password is correct.
+
+If the user exists and the password is correct, the server creates a JSON Web Token (JWT) that contains the user's ID and any other relevant information (e.g., username, email).
+
+The server sends the JWT back to the React application in the response body.
+
+The React application receives the JWT and stores it in local storage or a cookie for later use.
+
+The React application can then redirect the user to the main page of the application, where the user's information can be displayed.
+
+When the user logs out, the React application removes the JWT from local storage or the cookie.
+
+If the user needs to access protected routes or perform authenticated actions, the React application sends the JWT in the header of the request to the Node.js server. The server verifies the JWT and grants access if it is valid.
+
+If the JWT expires or becomes invalid, the server denies access and the React application can redirect the user to the login page.
